@@ -1,1 +1,2 @@
 # entra-playground
+Following and updating [this MS Learn tutorial](https://learn.microsoft.com/en-us/samples/azure-samples/ms-identity-ciam-javascript-tutorial/ms-identity-ciam-javascript-tutorial-2-call-api-angular/)
