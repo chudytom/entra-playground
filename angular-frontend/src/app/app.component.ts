@@ -1,5 +1,5 @@
-import { Component, OnInit, Inject, OnDestroy } from '@angular/core';
-import { MsalService, MsalBroadcastService, MSAL_GUARD_CONFIG, MsalGuardConfiguration } from '@azure/msal-angular';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import { MSAL_GUARD_CONFIG, MsalBroadcastService, MsalGuardConfiguration, MsalService } from '@azure/msal-angular';
 import { AuthenticationResult, EventMessage, EventType, InteractionStatus, InteractionType, PopupRequest, RedirectRequest } from '@azure/msal-browser';
 import { Subject } from 'rxjs';
 import { filter, takeUntil } from 'rxjs/operators';
@@ -76,6 +76,7 @@ export class AppComponent implements OnInit, OnDestroy {
     }
 
     login() {
+      console.log('login called');
         if (this.msalGuardConfig.interactionType === InteractionType.Popup) {
             if (this.msalGuardConfig.authRequest) {
                 this.authService.loginPopup({ ...this.msalGuardConfig.authRequest } as PopupRequest)
