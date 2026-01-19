@@ -1,24 +1,32 @@
 <mat-toolbar color="primary">
-    <a class="title" href="/">{{ title }}</a>
+  <a class="title" href="/">{{ title }}</a>
 
-    <div class="toolbar-spacer"></div>
+  <div class="toolbar-spacer"></div>
 
-    <a mat-button [routerLink]="['todo-view']">ToDoList</a>
+  <a mat-button [routerLink]="['todo-view']">ToDoList</a>
 
-    <button mat-raised-button *ngIf="!loginDisplay" (click)="login()">Login</button>
-    <button mat-raised-button color="accent" *ngIf="loginDisplay" (click)="logout()">Logout</button>
+  @if (!loginDisplay) {
+    <button mat-raised-button (click)="login()">Login</button>
+  }
+  @if (loginDisplay) {
+    <button mat-raised-button color="accent" (click)="logout()">Logout</button>
+  }
 </mat-toolbar>
 <div class="container">
-    <!--This is to avoid reload during acquireTokenSilent() because of hidden iframe -->
-    <router-outlet *ngIf="!isIframe"></router-outlet>
+  <!--This is to avoid reload during acquireTokenSilent() because of hidden iframe -->
+  @if (!isIframe) {
+    <router-outlet></router-outlet>
+  }
 </div>
 
-<footer *ngIf="loginDisplay">
+@if (loginDisplay) {
+  <footer>
     <mat-toolbar>
-        <div class="footer-text">
-            How did we do? <a
-                href="https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR_ivMYEeUKlEq8CxnMPgdNZUNDlUTTk2NVNYQkZSSjdaTk5KT1o4V1VVNS4u"
-                target="_blank"> Share your experience with us!</a>
-        </div>
-    </mat-toolbar>
+      <div class="footer-text">
+        How did we do? <a
+        href="https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR_ivMYEeUKlEq8CxnMPgdNZUNDlUTTk2NVNYQkZSSjdaTk5KT1o4V1VVNS4u"
+      target="_blank"> Share your experience with us!</a>
+    </div>
+  </mat-toolbar>
 </footer>
+}
