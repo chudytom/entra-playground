@@ -5,7 +5,7 @@
  * in app.module.ts file.
  */
 
-import { LogLevel, Configuration, BrowserCacheLocation } from '@azure/msal-browser';
+import { BrowserCacheLocation, Configuration, LogLevel } from '@azure/msal-browser';
 
 const isIE = window.navigator.userAgent.indexOf("MSIE ") > -1 || window.navigator.userAgent.indexOf("Trident/") > -1;
 
@@ -16,8 +16,8 @@ const isIE = window.navigator.userAgent.indexOf("MSIE ") > -1 || window.navigato
  */
 export const msalConfig: Configuration = {
     auth: {
-        clientId: 'Enter_the_Application_Id_Here', // Replace the placeholder with your application ID
-        authority: 'https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/', // Replace the placeholder with your tenant subdomain
+        clientId: '91b901f5-3bf2-41e8-ae6b-85b2f04bfec9', // Replace the placeholder with your application ID
+        authority: 'https://LODSM718498.onmicrosoft.com/', // Replace the placeholder with your tenant subdomain
         redirectUri: '/auth', // Points to window.location.origin by default. You must register this URI on Microsoft Entra admin center/App Registration.
         postLogoutRedirectUri: '/', // Points to window.location.origin by default
     },
@@ -48,8 +48,8 @@ export const protectedResources = {
     toDoListAPI: {
         endpoint: 'https://localhost:44351/api/todolist',
         scopes: {
-            read: ['api://Enter_the_Web_Api_Application_Id_Here/ToDoList.Read'],
-            write: ['api://Enter_the_Web_Api_Application_Id_Here/ToDoList.ReadWrite'],
+            read: ['api://baa958c0-9ac5-4464-9052-9d0e4d0e3213/ToDoList.Read'],
+            write: ['api://baa958c0-9ac5-4464-9052-9d0e4d0e3213/ToDoList.ReadWrite'],
         },
     },
 };
