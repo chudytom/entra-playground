@@ -7,7 +7,8 @@ import { ToDo } from '../todo';
 @Component({
     selector: 'app-todo-view',
     templateUrl: './todo-view.component.html',
-    styleUrls: ['./todo-view.component.css']
+    styleUrls: ['./todo-view.component.css'],
+    standalone: false
 })
 export class TodoViewComponent implements OnInit {
 

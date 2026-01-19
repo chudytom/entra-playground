@@ -7,7 +7,8 @@ import { ToDo } from '../todo';
 @Component({
     selector: 'app-todo-edit',
     templateUrl: './todo-edit.component.html',
-    styleUrls: ['./todo-edit.component.css']
+    styleUrls: ['./todo-edit.component.css'],
+    standalone: false
 })
 export class TodoEditComponent implements OnInit {
 
